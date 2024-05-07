@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 {
     int cant;
     int num;
-    cout << "Ingrese la cantidad de numeros a ingresar: ";
+    cout << "Ingrese la cantidad de numeros a imprimir: ";
     cin >> cant;
     for (int i = 0; i < cant; i++)
     {
