@@ -1,10 +1,12 @@
 #include <iostream>
 #include <locale.h>
-using namespace std;
 #include "daoCiudad.cpp"
 
-int main(int argc, char const *argv[])
+using namespace std;
+
+int main()
 {
+    /* code */
     setlocale(LC_ALL, "spanish");
     principal();
     return 0;
