@@ -26,6 +26,7 @@ void editarDatos();
 void eliminarDato();
 int loadCity();
 void writeFile(const CIUDAD &city);
+void saveAll();
 
 void agregar(CIUDAD *c)
 {
@@ -179,6 +180,7 @@ void editarDatos(){
      scanf(" %[^\n]", c.descripcion);
      editar(&c, id);
      cout << "Registro actualizado...\n";
+     saveAll();
 }
 
 void eliminarDato(){
@@ -187,6 +189,7 @@ void eliminarDato(){
     cout << "ID: ";
     cin >> id;
     eliminar(id);
+    saveAll();
 }
 
 int loadCity(){
@@ -216,5 +219,16 @@ void writeFile(const CIUDAD &city){
     archivo << city.nombre << endl;
     archivo << city.descripcion << endl;
     archivo.close();
+}
 
+void saveAll(){
+    ofstream archivo;
+    archivo.open("cities.txt", ios::trunc | ios::out );
+    for (int i = 0; i < pos; i++)
+    {
+        archivo << ciudades[i].id << endl;
+        archivo << ciudades[i].nombre << endl;
+        archivo << ciudades[i].descripcion << endl;
+    }
+    archivo.close();
 }
